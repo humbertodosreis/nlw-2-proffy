@@ -1,0 +1,35 @@
+POST http://localhost:3333/classes HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Humberto Rodrigues",
+    "avatar": "https://avatars1.githubusercontent.com/u/2581415?s=460&u=8e99431702ff81ab65123cfa2fb991bb3937bced&v=4",
+    "whatsapp": "11992580398",
+    "bio": "Software Engineer at OLX",
+    "subject": "Matemática",
+    "cost": 80,
+    "schedule": [
+        {"week_day": 1, "from": "8:00", "to": "12:00"},
+        {"week_day": 3, "from": "10:00", "to": "18:00"}
+    ]
+}
+
+###
+
+GET http://localhost:3333/classes
+    ?week_day=1
+    &subject=Matemática
+    &time=11:00
+Accept: application/json
+
+###
+POST http://localhost:3333/connections HTTP/1.1
+Content-Type: application/json
+
+{
+    "user_id": 1
+}
+
+###
+GET http://localhost:3333/connections HTTP/1.1
+Accept: application/json
